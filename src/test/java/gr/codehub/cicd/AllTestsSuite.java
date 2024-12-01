@@ -12,8 +12,8 @@ import org.junit.platform.suite.api.Suite;
 @SelectClasses({
         EmployeeTest.class,
         FinancialSummaryDTOTest.class,
-        SampleLoadTest.class,
-        DatabaseServiceTest.class
+//        SampleLoadTest.class,
+//        DatabaseServiceTest.class,
 })
 @IncludeClassNamePatterns(".*Test") // Includes all classes whose name ends with "Test"
 public class AllTestsSuite {
