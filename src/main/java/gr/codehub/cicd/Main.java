@@ -10,13 +10,14 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        // Load sample data
+        System.out.println("Program started");
         DatabaseService dbService = SampleLoad.loadSampleData();
         List<Employee> employees = dbService.findAllEmployees();
         FinancialSummaryDTO summary = getFinancialSummaryDTO(employees);
         System.out.println(summary);
         double averageAmountSpent = getAverageAmountSpent(summary.getTotalAmountSpent(), employees.size());
         System.out.println("Average amount spent per employee: $" + averageAmountSpent);
+        System.out.println("Program finished");
     }
 
     static double getAverageAmountSpent(double totalAmount, int size) {
