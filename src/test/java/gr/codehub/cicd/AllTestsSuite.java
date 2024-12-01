@@ -14,6 +14,7 @@ import org.junit.platform.suite.api.Suite;
         FinancialSummaryDTOTest.class,
 //        SampleLoadTest.class,
 //        DatabaseServiceTest.class,
+        MainTest.class,
 })
 @IncludeClassNamePatterns(".*Test") // Includes all classes whose name ends with "Test"
 public class AllTestsSuite {

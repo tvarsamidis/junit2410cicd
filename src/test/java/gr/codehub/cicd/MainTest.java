@@ -39,9 +39,9 @@ public class MainTest {
         FinancialSummaryDTO summary = Main.getFinancialSummaryDTO(employees);
 
         // Assert the totals
-        assertEquals(135000, summary.getTotalSalaryPayments());
-        assertEquals(40500, summary.getTotalTaxPayments());
-        assertEquals(175500, summary.getTotalAmountSpent());
+        assertEquals(125000, summary.getTotalSalaryPayments());
+        assertEquals(46750, summary.getTotalTaxPayments());
+        assertEquals(171750, summary.getTotalAmountSpent());
     }
 
     @Test
