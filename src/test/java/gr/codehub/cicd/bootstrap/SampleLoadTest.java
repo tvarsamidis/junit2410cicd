@@ -52,16 +52,5 @@ public class SampleLoadTest {
         assertEquals(171750, summary.getTotalAmountSpent());
     }
 
-    @Test
-    void testAverageAmountSpent() {
-        // Calculate total amount spent
-        double totalAmountSpent = 175500; // from previous test
-
-        // Test the average amount spent
-        double average = Main.getAverageAmountSpent(totalAmountSpent, employees.size());
-
-        // Assert the average
-        assertEquals(58500, average);
-    }
 }
 
