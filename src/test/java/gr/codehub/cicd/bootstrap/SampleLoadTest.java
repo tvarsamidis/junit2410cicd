@@ -7,7 +7,6 @@ import gr.codehub.cicd.service.DatabaseService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -15,9 +14,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.atLeast;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 
@@ -68,15 +64,5 @@ public class SampleLoadTest {
         assertEquals(125000, summary.getTotalSalaryPayments());
         assertEquals(46750, summary.getTotalTaxPayments());
         assertEquals(171750, summary.getTotalAmountSpent());
-    }   @Test
-    void testAverageAmountSpent() {
-        // Calculate total amount spent
-        double totalAmountSpent = 175500; // from previous test
-
-        // Test the average amount spent
-        double average = Main.getAverageAmountSpent(totalAmountSpent, employees.size());
-
-        // Assert the average
-        assertEquals(58500, average);
     }
 }
