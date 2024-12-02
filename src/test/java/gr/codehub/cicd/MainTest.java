@@ -2,10 +2,11 @@ package gr.codehub.cicd;
 
 import gr.codehub.cicd.dto.FinancialSummaryDTO;
 import gr.codehub.cicd.model.Employee;
-import gr.codehub.cicd.service.DatabaseServiceImpl;
+import gr.codehub.cicd.service.DatabaseService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,28 +16,31 @@ import static org.mockito.Mockito.when;
 
 public class MainTest {
 
-    private DatabaseServiceImpl databaseServiceImpl;
+    @Mock
+    private DatabaseService databaseService; // Mock the interface
+
+    private List<Employee> employees; // Common employees list for all tests
 
     @BeforeEach
     void setUp() {
-        // Mocking the DatabaseServiceImpl to return predefined employee data
-        databaseServiceImpl = Mockito.mock(DatabaseServiceImpl.class);
-    }
+        // Initialize Mockito annotations
+        MockitoAnnotations.openMocks(this);
 
-    @Test
-    void testFinancialSummaryDTO() {
-        // Create sample employees
-        List<Employee> employees = Arrays.asList(
+        // Initialize the common employees list
+        employees = Arrays.asList(
                 new Employee(1, "Alice", 55000),
                 new Employee(2, "Bob", 45000),
                 new Employee(3, "Charlie", 25000)
         );
+    }
 
-        // Mock the DatabaseServiceImpl's behavior
-        when(databaseServiceImpl.findAllEmployees()).thenReturn(employees);
+    @Test
+    void testFinancialSummaryDTO() {
+        // Mock the DatabaseService behavior
+        when(databaseService.findAllEmployees()).thenReturn(employees);
 
         // Test the calculation of the financial summary
-        FinancialSummaryDTO summary = Main.getFinancialSummaryDTO(employees);
+        FinancialSummaryDTO summary = Main.getFinancialSummaryDTO(databaseService.findAllEmployees());
 
         // Assert the totals
         assertEquals(125000, summary.getTotalSalaryPayments());
@@ -46,13 +50,6 @@ public class MainTest {
 
     @Test
     void testAverageAmountSpent() {
-        // Create sample employees
-        List<Employee> employees = Arrays.asList(
-                new Employee(1, "Alice", 55000),
-                new Employee(2, "Bob", 45000),
-                new Employee(3, "Charlie", 25000)
-        );
-
         // Calculate total amount spent
         double totalAmountSpent = 175500; // from previous test
 
