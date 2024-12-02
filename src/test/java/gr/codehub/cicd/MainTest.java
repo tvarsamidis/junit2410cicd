@@ -5,8 +5,10 @@ import gr.codehub.cicd.model.Employee;
 import gr.codehub.cicd.service.DatabaseService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,6 +16,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
+@ExtendWith(MockitoExtension.class)  // JUnit 5 extension for Mockito
 public class MainTest {
 
     @Mock
@@ -24,7 +27,7 @@ public class MainTest {
     @BeforeEach
     void setUp() {
         // Initialize Mockito annotations
-        MockitoAnnotations.openMocks(this);
+        // MockitoAnnotations.openMocks(this);
 
         // Initialize the common employees list
         employees = Arrays.asList(
