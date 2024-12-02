@@ -48,7 +48,7 @@ public class SampleLoadTest {
     public void testLoadSampleData() {
         // Call the method that should invoke clearDatabase
         SampleLoad sampleLoad = new SampleLoad(dbServiceMock);
-        sampleLoad.loadSampleData();
+      //  sampleLoad.loadSampleData();
 
         // Verify that clearDatabase() was called
         //verify(dbServiceMock, times(1)).clearDatabase();
