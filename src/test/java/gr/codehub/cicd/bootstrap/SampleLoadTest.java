@@ -38,8 +38,22 @@ public class SampleLoadTest {
         );
     }
 
+
     @Test
-    void testFinancialSummaryDTO() {
+    // TODO update tests
+    void testLoadSampleData() {
+        // Call the method that should invoke clearDatabase
+        // SampleLoad sampleLoad = new SampleLoad(dbServiceMock);
+        //  sampleLoad.loadSampleData();
+
+        // Verify that clearDatabase() was called
+        //verify(dbServiceMock, times(1)).clearDatabase();
+//        verify(dbServiceMock).clearDatabase();
+
+        // Verify other interactions if necessary
+        // For example, verify that saveEmployee was called for each employee
+        // verify(dbServiceMock, atLeastOnce()).saveEmployee(any());
+        //      verify(dbServiceMock, atLeast(5)).saveEmployee(any());
         // Mock the DatabaseService behavior
         when(dbServiceMock.findAllEmployees()).thenReturn(employees);
 
@@ -51,6 +65,6 @@ public class SampleLoadTest {
         assertEquals(46750, summary.getTotalTaxPayments());
         assertEquals(171750, summary.getTotalAmountSpent());
     }
-
 }
+
 
