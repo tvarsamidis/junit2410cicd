@@ -11,7 +11,8 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Program started");
-        DatabaseService dbService = SampleLoad.loadSampleData();
+        DatabaseService dbService = new DatabaseServiceImpl();
+        new SampleLoad(dbService).loadSampleData();
         List<Employee> employees = dbService.findAllEmployees();
         FinancialSummaryDTO summary = getFinancialSummaryDTO(employees);
         System.out.println(summary);
