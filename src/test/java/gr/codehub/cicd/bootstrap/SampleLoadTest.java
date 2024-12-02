@@ -9,7 +9,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.mockito.Mockito.*;
 
-@ExtendWith(MockitoExtension.class)
+//@ExtendWith(MockitoExtension.class)
 public class SampleLoadTest {
 
     @Mock
@@ -20,7 +20,7 @@ public class SampleLoadTest {
 
     @BeforeEach
     public void setup() {
-        // MockitoAnnotations.openMocks(this);  // Initialize mocks, superseded by ExtendWith
+        MockitoAnnotations.openMocks(this);  // Initialize mocks, superseded by ExtendWith
     }
 
     @Test
