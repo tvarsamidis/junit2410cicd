@@ -21,7 +21,7 @@ public class Main {
         System.out.println("Program finished");
     }
 
-    static double getAverageAmountSpent(double totalAmount, int size) {
+    public static double getAverageAmountSpent(double totalAmount, int size) {
             return totalAmount / size;
     }
 
