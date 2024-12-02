@@ -25,7 +25,7 @@ public class Main {
             return totalAmount / size;
     }
 
-    static FinancialSummaryDTO getFinancialSummaryDTO(List<Employee> employees) {
+    public static FinancialSummaryDTO getFinancialSummaryDTO(List<Employee> employees) {
         // Initialize totals
         double totalSalaryPayments = 0;
         double totalTaxPayments = 0;

@@ -7,7 +7,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Arrays;
@@ -20,7 +19,7 @@ import static org.mockito.Mockito.when;
 public class MainTest {
 
     @Mock
-    private DatabaseService databaseService; // Mock the interface
+    private DatabaseService dbServiceMock; // Mock the interface
 
     private List<Employee> employees; // Common employees list for all tests
 
@@ -40,10 +39,10 @@ public class MainTest {
     @Test
     void testFinancialSummaryDTO() {
         // Mock the DatabaseService behavior
-        when(databaseService.findAllEmployees()).thenReturn(employees);
+        when(dbServiceMock.findAllEmployees()).thenReturn(employees);
 
         // Test the calculation of the financial summary
-        FinancialSummaryDTO summary = Main.getFinancialSummaryDTO(databaseService.findAllEmployees());
+        FinancialSummaryDTO summary = Main.getFinancialSummaryDTO(dbServiceMock.findAllEmployees());
 
         // Assert the totals
         assertEquals(125000, summary.getTotalSalaryPayments());
