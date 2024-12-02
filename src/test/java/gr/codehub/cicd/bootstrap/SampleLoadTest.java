@@ -7,6 +7,7 @@ import gr.codehub.cicd.service.DatabaseService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -14,6 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 
@@ -22,6 +24,9 @@ public class SampleLoadTest {
 
     @Mock
     private DatabaseService dbServiceMock; // Mock the interface
+
+    @InjectMocks
+    private SampleLoad sampleLoad;
 
     private List<Employee> employees; // Common employees list for all tests
 
@@ -44,26 +49,26 @@ public class SampleLoadTest {
     void testLoadSampleData() {
         // Call the method that should invoke clearDatabase
         // SampleLoad sampleLoad = new SampleLoad(dbServiceMock);
-        //  sampleLoad.loadSampleData();
+        sampleLoad.loadSampleData();
 
         // Verify that clearDatabase() was called
         //verify(dbServiceMock, times(1)).clearDatabase();
-//        verify(dbServiceMock).clearDatabase();
+        verify(dbServiceMock).clearDatabase();
 
         // Verify other interactions if necessary
         // For example, verify that saveEmployee was called for each employee
         // verify(dbServiceMock, atLeastOnce()).saveEmployee(any());
         //      verify(dbServiceMock, atLeast(5)).saveEmployee(any());
         // Mock the DatabaseService behavior
-        when(dbServiceMock.findAllEmployees()).thenReturn(employees);
-
-        // Test the calculation of the financial summary
-        FinancialSummaryDTO summary = Main.getFinancialSummaryDTO(dbServiceMock.findAllEmployees());
-
-        // Assert the totals
-        assertEquals(125000, summary.getTotalSalaryPayments());
-        assertEquals(46750, summary.getTotalTaxPayments());
-        assertEquals(171750, summary.getTotalAmountSpent());
+//        when(dbServiceMock.findAllEmployees()).thenReturn(employees);
+//
+//        // Test the calculation of the financial summary
+//        FinancialSummaryDTO summary = Main.getFinancialSummaryDTO(dbServiceMock.findAllEmployees());
+//
+//        // Assert the totals
+//        assertEquals(125000, summary.getTotalSalaryPayments());
+//        assertEquals(46750, summary.getTotalTaxPayments());
+//        assertEquals(171750, summary.getTotalAmountSpent());
     }
 }
 
