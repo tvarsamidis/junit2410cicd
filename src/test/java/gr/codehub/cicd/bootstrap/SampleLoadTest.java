@@ -1,6 +1,7 @@
 package gr.codehub.cicd.bootstrap;
 
 import gr.codehub.cicd.service.DatabaseService;
+import gr.codehub.cicd.service.DatabaseServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.*;
