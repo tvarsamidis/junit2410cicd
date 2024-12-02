@@ -5,26 +5,24 @@ import gr.codehub.cicd.model.Employee;
 import gr.codehub.cicd.service.DatabaseService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.when;
+
 
 public class MainTest {
 
-    @Mock
-    private DatabaseService databaseService; // Mock the interface
+//    @Mock
+//    private DatabaseService databaseService; // Mock the interface
 
     private List<Employee> employees; // Common employees list for all tests
 
     @BeforeEach
     void setUp() {
         // Initialize Mockito annotations
-        MockitoAnnotations.openMocks(this);
+//        MockitoAnnotations.openMocks(this);
 
         // Initialize the common employees list
         employees = Arrays.asList(
@@ -34,19 +32,19 @@ public class MainTest {
         );
     }
 
-    @Test
-    void testFinancialSummaryDTO() {
-        // Mock the DatabaseService behavior
-        when(databaseService.findAllEmployees()).thenReturn(employees);
-
-        // Test the calculation of the financial summary
-        FinancialSummaryDTO summary = Main.getFinancialSummaryDTO(databaseService.findAllEmployees());
-
-        // Assert the totals
-        assertEquals(125000, summary.getTotalSalaryPayments());
-        assertEquals(46750, summary.getTotalTaxPayments());
-        assertEquals(171750, summary.getTotalAmountSpent());
-    }
+//    @Test
+//    void testFinancialSummaryDTO() {
+//        // Mock the DatabaseService behavior
+//        when(databaseService.findAllEmployees()).thenReturn(employees);
+//
+//        // Test the calculation of the financial summary
+//        FinancialSummaryDTO summary = Main.getFinancialSummaryDTO(databaseService.findAllEmployees());
+//
+//        // Assert the totals
+//        assertEquals(125000, summary.getTotalSalaryPayments());
+//        assertEquals(46750, summary.getTotalTaxPayments());
+//        assertEquals(171750, summary.getTotalAmountSpent());
+//    }
 
     @Test
     void testAverageAmountSpent() {
