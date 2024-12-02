@@ -16,12 +16,12 @@ public class DatabaseServiceTest {
 //    private DatabaseService dbServiceMock;
 //
 //    @BeforeEach
-//    public void setup() {
+//    void setup() {
 //    // MockitoAnnotations.openMocks(this);  // Initialize mocks, superseded by ExtendWith
 //    }
 //
 //    @Test
-//    public void testSaveEmployee() {
+//    void testSaveEmployee() {
 //        Employee employee = new Employee(1, "Alice", 55000);
 //
 //        // Call saveEmployee

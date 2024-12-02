@@ -2,12 +2,13 @@ package gr.codehub.cicd.dto;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class FinancialSummaryDTOTest {
 
     @Test
-    public void testConstructorAndGetters() {
+    void testConstructorAndGetters() {
         // Create a FinancialSummaryDTO object with some test data
         double totalSalary = 100000.00;
         double totalTax = 20000.00;
@@ -22,7 +23,7 @@ public class FinancialSummaryDTOTest {
     }
 
     @Test
-    public void testDefaultConstructor() {
+    void testDefaultConstructor() {
         // Test the default constructor
         FinancialSummaryDTO summary = new FinancialSummaryDTO();
 
@@ -33,7 +34,7 @@ public class FinancialSummaryDTOTest {
     }
 
     @Test
-    public void testToString() {
+    void testToString() {
         // Create a FinancialSummaryDTO object
         double totalSalary = 100000.00;
         double totalTax = 20000.00;
