@@ -20,7 +20,7 @@ public class DatabaseServiceTest {
 
     @BeforeEach
     public void setup() {
-        MockitoAnnotations.openMocks(this);  // Initialize mocks
+ //       MockitoAnnotations.openMocks(this);  // Initialize mocks
     }
 
     @Test
